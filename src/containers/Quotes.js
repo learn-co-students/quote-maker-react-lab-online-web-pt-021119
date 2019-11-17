@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuoteCard from '../components/QuoteCard';
-import { removeQuote } from '../actions/quotes';
+import { removeQuote, upvoteQuote, downvoteQuote } from '../actions/quotes';
 
 class Quotes extends Component {
 
@@ -33,10 +33,10 @@ const mapStateToProps = state => {
   return { quotes: state.quotes }
 }
 
-//const mapDispatchToProps = dispatch => {
-//  return {
-//    removeQuote: () => { dispatch(removeQuote()) }
-//  }
-//}
+const mapDispatchToProps = dispatch => ({
+    removeQuote: id => { dispatch(removeQuote(id)) },
+    upvoteQuote: id => { dispatch(upvoteQuote(id)) },
+    downvoteQuote: id => { dispatch(downvoteQuote(id)) }
+  });
 
-export default connect(mapStateToProps, { removeQuote })(Quotes);
+export default connect(mapStateToProps, mapDispatchToProps)(Quotes);
