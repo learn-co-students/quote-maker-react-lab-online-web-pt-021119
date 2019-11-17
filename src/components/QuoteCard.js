@@ -14,12 +14,14 @@ const QuoteCard = (props) =>
           <button
             type="button"
             className="btn btn-primary"
+            onClick={event => props.upvoteQuote(props.quote.id) }
           >
             Upvote
           </button>
           <button
             type="button"
             className="btn btn-secondary"
+            onClick={event => props.downvoteQuote(props.quote.id) }
           >
             Downvote
           </button>
