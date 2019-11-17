@@ -11,3 +11,17 @@ export const removeQuote = id => {
     id
   };
 };
+
+export const upvoteQuote = id => {
+  return {
+    type: 'UPVOTE_QUOTE',
+    id
+  };
+};
+
+export const downvoteQuote = id => {
+  return {
+    type: 'DOWNVOTE_QUOTE',
+    id
+  };
+};
