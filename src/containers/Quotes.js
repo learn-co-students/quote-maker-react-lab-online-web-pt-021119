@@ -34,9 +34,9 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    removeQuote: id => { dispatch(removeQuote(id)) },
-    upvoteQuote: id => { dispatch(upvoteQuote(id)) },
-    downvoteQuote: id => { dispatch(downvoteQuote(id)) }
+    removeQuote: quoteId => { dispatch(removeQuote(quoteId)) },
+    upvoteQuote: quoteId => { dispatch(upvoteQuote(quoteId)) },
+    downvoteQuote: quoteId => { dispatch(downvoteQuote(quoteId)) }
   });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quotes);
