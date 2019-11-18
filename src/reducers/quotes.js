@@ -6,12 +6,12 @@ export default (state = [], action) => {
       return [...state, action.quote];
 
     case 'REMOVE_QUOTE':
-      idx = state.findIndex(quote => quote.quoteId === action.id);
+      idx = state.findIndex(quote => quote.id === action.quoteId);
       return [...state.slice(0, idx), ...state.slice(idx + 1)];
 
     case 'UPVOTE_QUOTE':
     return state.map(quote => {
-      if(quote.quoteId === action.id){
+      if(quote.id === action.quoteId){
         quote.votes = quote.votes + 1;
         return quote;
       }else{
@@ -21,7 +21,7 @@ export default (state = [], action) => {
 
     case 'DOWNVOTE_QUOTE':
     return state.map(quote => {
-      if(quote.quoteId === action.id && quote.votes > 0){
+      if(quote.id === action.quoteId && quote.votes > 0){
         quote.votes = quote.votes - 1;
         return quote;
       }else{
