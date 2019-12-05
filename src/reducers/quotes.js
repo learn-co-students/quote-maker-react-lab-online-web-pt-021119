@@ -4,7 +4,7 @@ export default (state = [], action) => {
     case 'ADD_QUOTE':
       return[...state, action.quote ]
     case 'REMOVE_QUOTE':
-        return[...state.quotes.filter(quote => quote.id !== action.quoteId)]
+        return state.filter(quote => quote.id !== action.quoteId);
     case 'UPVOTE_QUOTE':
       return state.map(quote => {
         if(quote.id === action.quoteId){
